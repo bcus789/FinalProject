@@ -10,7 +10,7 @@ class Chat extends React.Component {
             messages: []
         };
 
-        this.socket = io('localhost:8080');
+        this.socket = io('localhost:3001');
 
         this.sendMessage = ev => {
             ev.preventDefault();
@@ -41,9 +41,9 @@ class Chat extends React.Component {
                     })}
                 </div>
                 <div className="footer">
-                    <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({ message: ev.target.value })} />
+                    <input type="text" placeholder="Message" value={this.state.message} onChange={ev => this.setState({ message: ev.target.value })} />
                     <br />
-                    <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
+                    <button onClick={this.sendMessage} >Send</button>
                 </div>
             </div>
         );
