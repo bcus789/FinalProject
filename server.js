@@ -1,7 +1,12 @@
 const express = require("express");
+http = require('http');
+const app = express();
+var socket = require('socket.io');
+const server = http.createServer(app);
+const io = socket(server);
+
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -17,7 +22,18 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/testdb");
 
+
+io.on('connection', (socket) => {
+  console.log(socket.id);
+
+  socket.on('SEND_MESSAGE', function (data) {
+    io.emit('RECEIVE_MESSAGE', data);
+  })
+  socket.on("disconnect", () => console.log("Client disconnected"));
+
+});
+
 // Start the server
-app.listen(PORT, function() {
+server.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
