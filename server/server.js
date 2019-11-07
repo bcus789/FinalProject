@@ -1,10 +1,9 @@
 const express = require("express");
 http = require('http');
 const app = express();
-var socket = require('socket.io');
+const socket = require('socket.io');
 const server = http.createServer(app);
 const io = socket(server);
-
 const mongoose = require("mongoose");
 //const passport = require('./passport');
 const routes = require("./routes");
