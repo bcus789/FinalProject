@@ -24,7 +24,7 @@ class Signup extends Component {
 			password: this.state.password
     }
 
-    axios.post("/user", data)
+    axios.post("/register", data)
       .then(response => console.log(response))
       .catch(err => console.log(err));
   };
