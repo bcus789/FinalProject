@@ -24,7 +24,7 @@ class Signup extends Component {
 			password: this.state.password
     }
 
-    axios.post("/register", data)
+    axios.post("/user/register", data)
       .then(response => console.log(response))
       .catch(err => console.log(err));
   };
@@ -32,7 +32,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h4>Sign up</h4>
+        <h2>Registration Form</h2>
         <form>
           <div>
             <label  htmlFor="username">Username</label>

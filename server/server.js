@@ -7,7 +7,7 @@ require('dotenv').config();
 const express = require("express");
 const morgan = require('morgan');
 const mongoose = require("mongoose");
-//const passport = require('./passport');
+const passport = require('./passport');
 const session = require('express-session');
 const http = require('http');
 const socket = require('socket.io');
@@ -37,8 +37,8 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/testdb");
 
 // Configure Passport
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Configure Socket IO
 const server = http.createServer(app);

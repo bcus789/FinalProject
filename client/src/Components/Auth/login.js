@@ -24,16 +24,26 @@ class Login extends Component {
       password: this.state.password
     }
 
-    axios.post("/login", data)
-      .then(response => console.log(response))
+    axios.post("/user/login", data)
+      .then(response => {
+        console.log(response)
+        if (response.status === 200) {
+          this.props.updateUser({
+            loggedIn: true,
+            username: response.data.username
+          })
+          console.log('successfully logged in user: ' + this.state.username);
+        } else {
+          console.log('Log in failed');
+        }
+      })
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div>
-        <h1>____ Login ____ Signup ____</h1>
-        
+        <h2>Login Form</h2>
         <form>
           <div>
             <label htmlFor="username">Username</label>
