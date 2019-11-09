@@ -12,9 +12,7 @@ class Login extends Component {
   // update state on form input
   handleChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({[name]: value });
   };
 
   // post login info to /login

@@ -2,7 +2,14 @@ const path = require("path");
 const router = require("express").Router();
 
 router.route("/login")
+    .post( function(req, res){
+      console.log("login received"); 
+      console.log(req.body);
+    })
+
+router.route("/user")
     .post( function(req, res){ 
+      console.log("signup received");
       console.log(req.body);
     })
 
