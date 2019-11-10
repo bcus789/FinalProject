@@ -1,10 +1,10 @@
 
-const express = require('express')
+//const express = require('express')
 const router = require("express").Router();
 const passport = require('../passport')
 const User = require('../db/models/user');
 const path = require("path");
-const mongoose = require('mongoose'); // needed ???
+//const mongoose = require('mongoose'); // needed ???
 
 // register user
 router.route("/user/register")
@@ -31,14 +31,14 @@ router.route("/user/register")
   // Log in user
   router.route('/user/login')
     .post((req, res, next) => {
-          console.log('routes/user.js, login, req.body: ');
+          console.log('/user/login - credentials recieved:');
           console.log(req.body);
           next();
       },
       passport.authenticate('local'),
       (req, res) => {
           console.log('logged in', req.user);
-          var userInfo = {
+          let userInfo = {
               username: req.user.username
           };
           res.send(userInfo);
@@ -59,11 +59,12 @@ router.route("/user/register")
   // Retrieve user information
   router.route('/user/')
     .get((req, res, next) => {
-      console.log('===== user!!======');
-      console.log(req.user);
+      console.log('/user - getting user info');
       if (req.user) {
+          console.log(req.user);
           res.json({ user: req.user });
       } else {
+        console.log('No user information recieved');
           res.json({ user: null });
       }
   });

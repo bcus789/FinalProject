@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Info extends Component {
-  
-  /* constructor() {
-    super()
-    this.logout = this.logout.bind(this);
-  } */
 
   logout = (event) => {
     event.preventDefault()
@@ -37,6 +31,7 @@ class Info extends Component {
               <section>
                 <Link to="#" onClick={this.logout}>
                 <span>logout</span></Link>
+                <Link to="/"><span>home</span></Link><br/>
               </section>
             ) : (
               <section>

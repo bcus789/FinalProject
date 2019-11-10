@@ -28,10 +28,11 @@ class Login extends Component {
       .then(response => {
         console.log(response)
         if (response.status === 200) {
-          this.props.updateUser({
+          this.props.updateUser(response.data.username, true)
+          /* {
             loggedIn: true,
             username: response.data.username
-          })
+          }) */
           console.log('successfully logged in user: ' + this.state.username);
         } else {
           console.log('Log in failed');
@@ -46,6 +47,7 @@ class Login extends Component {
         <h2>Login Form</h2>
         <form>
           <div>
+            
             <label htmlFor="username">Username</label>
             <input
               type="text"
@@ -53,8 +55,7 @@ class Login extends Component {
               name="username"
               placeholder="Username"
               value={this.state.username}
-              onChange={this.handleChange}
-            />
+              onChange={this.handleChange} />
           </div>
 
           <div>
@@ -64,14 +65,12 @@ class Login extends Component {
                 type="password"
                 name="password"
                 value={this.state.password}
-                onChange={this.handleChange}
-              />
+                onChange={this.handleChange} />
           </div>
 
           <div>
-            <button
-              onClick={this.handleSubmit}
-              type="submit">Login
+            <button onClick={this.handleSubmit}
+                    type="submit">Login
             </button>
           </div>
 
