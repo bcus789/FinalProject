@@ -5,7 +5,21 @@ const Schema = mongoose.Schema;
 const user = new Schema(
   {
     username: { type: String, required: false },
+    email: { type: String, required: false },
+    firstName: { type: String, required: false },
+    lastName: { type: String, required: false },
     password: { type: String, required: false }
+
+    // ref user for verification
+    // owner: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   required: true,
+    //   ref: "User"
+    // }
+
+  },
+  {
+    timestamps: true
   }
 );
 
@@ -14,7 +28,7 @@ user.methods = {
   checkPassword: function (inputPassword) {
     return bcrypt.compareSync(inputPassword, this.password);
   },
-  // convert plaintext to hahed password
+  // convert plaintext to hashed password
   hashPassword: plainText => {
     return bcrypt.hashSync(plainText, 10)
   }

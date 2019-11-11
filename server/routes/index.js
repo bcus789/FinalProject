@@ -10,7 +10,7 @@ const path = require("path");
 router.route("/user/register")
   .post(function (req, res) { 
       console.log(req.body);
-      const { username, password } = req.body;
+      const { username, email, firstName, lastName, password } = req.body;
 
       User.findOne({username:username}, (err, result) => {
         if(result) console.log('username already exists');
@@ -18,6 +18,9 @@ router.route("/user/register")
         else {
           const newUser = new User({
             username: username,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
             password: password
           })
           newUser.save((err, savedUser) => {
