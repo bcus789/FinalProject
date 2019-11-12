@@ -1,0 +1,196 @@
+.nav-line {
+  height: 450px;
+  width: 1px;
+  position: absolute;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  margin-left: 150px;
+  margin-top: 200px;
+}
+​ .home-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  margin-left: -18px;
+  margin-top: -14px;
+  border: 3px solid #999999;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+​ .home-inner {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  margin-left: 4px;
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+  background-color: white;
+  border-radius: 30px;
+}
+​ .events-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  margin-left: -15px;
+  margin-top: 140px;
+  background-color: #3f3f3f50;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+​ .events-indicator:hover {
+  transition: all 0.3s ease-in-out;
+  margin-left: -19px;
+  margin-top: 137px;
+  border: 3px solid #999999;
+  width: 34px;
+  height: 34px;
+}
+​ .events-indicator:hover .events-inner {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+  background-color: rgb(255, 255, 255);
+  width: 24px;
+  height: 24px;
+}
+​ .events-indicator:hover p {
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+​ .events-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #353535;
+  z-index: 3;
+}
+​
+/* .events-inner:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+    background-color: rgb(255, 255, 255);
+    width: 24px;
+    height: 24px;
+   
+} */
+​
+​
+​
+.payments-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  margin-left: -15px;
+  margin-top: 280px;
+  background-color: #3f3f3f50;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+​ .payments-indicator:hover {
+  transition: all 0.3s ease-in-out;
+  margin-left: -19px;
+  margin-top: 277px;
+  border: 3px solid #999999;
+  width: 34px;
+  height: 34px;
+}
+​ .payments-indicator:hover .payments-inner {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+  background-color: rgb(255, 255, 255);
+  width: 24px;
+  height: 24px;
+}
+​ .payments-indicator:hover p {
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+​ .payments-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #353535;
+  z-index: 3;
+  position: absolute;
+}
+​ .leaderboard-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  margin-left: -15px;
+  margin-top: 425px;
+  background-color: #3f3f3f50;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+​ .leaderboard-indicator:hover {
+  transition: all 0.3s ease-in-out;
+  margin-left: -19px;
+  margin-top: 422px;
+  border: 3px solid #999999;
+  width: 34px;
+  height: 34px;
+}
+​ .leaderboard-indicator:hover .leaderboard-inner {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+  background-color: rgb(255, 255, 255);
+  width: 24px;
+  height: 24px;
+}
+​ .leaderboard-indicator:hover p {
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+​ .leaderboard-inner {
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #353535;
+  z-index: 3;
+  position: absolute;
+}
+​ .home-txt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 13px;
+  color: white;
+  margin-left: 42px;
+  margin-top: 4px;
+}
+​ .events-txt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 13px;
+  color: rgb(77, 77, 77);
+  margin-left: 42px;
+  margin-top: 4px;
+}
+​ .payments-txt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 13px;
+  color: rgb(77, 77, 77);
+  margin-left: 42px;
+  margin-top: 4px;
+}
+​ .leaderboard-txt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 13px;
+  color: rgb(77, 77, 77);
+  margin-left: 42px;
+  margin-top: 4px;
+}
