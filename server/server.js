@@ -13,7 +13,7 @@ const http = require('http');
 const socket = require('socket.io');
 const app = express();
 const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 // Configure middleware
 app.use(morgan('dev'));
