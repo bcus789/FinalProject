@@ -1,15 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Chat from './Components/Chat/Chat.js'
-import Stream from './Components/Stream.js'
-import Auth from './Components/Auth';
+import { BrowserRouter as Router} from "react-router-dom";
+import TopNav from "./Components/TopNav/TopNav";
+import StreamBox from "./Components/Carousel/Carousel";
+import Chat from "./Components/Chat/Chat";
+import Stream from "./Components/Stream";
+import Auth from "./Components/Auth";
+import "./base.css";
 
 
 function App() {
   return (
     <Router>
       <div>
-        <p>Hello Group Project</p>
+        <TopNav />
+        <StreamBox />
         <Stream />
         <Chat />
         <Auth />
