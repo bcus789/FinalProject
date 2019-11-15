@@ -1,111 +1,85 @@
-import React, { useState } from "react";
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from "reactstrap";
-import "./Carousel.css";
+import React from 'react';
+import './Carousel.css';
+import Fade from 'react-reveal/Fade';
 
-const items = [
-  {
-    src:
-      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    altText: "",
-    caption: ""
-  },
-  {
-    src:
-      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    altText: "",
-    caption: ""
-  },
-  {
-    src:
-      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    altText: "",
-    caption: ""
-  },
-  {
-    src:
-      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    altText: "",
-    caption: ""
-  },
-  {
-    src:
-      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    altText: "",
-    caption: ""
-  }
+const imgUrls = [
+	"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/MLG_Columbus_-_Luminosity_vs_Navi.jpg/1200px-MLG_Columbus_-_Luminosity_vs_Navi.jpg", 
+	"https://oddslifenetstorage.blob.core.windows.net/esportsinsider/2018/11/LoL-World-Championships.jpg",
+	"https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/05/24150521/36037775330_3477d412fc_k.jpg",
+
 ];
 
-const StreamBox = props => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
+class Carousel extends React.Component {
+	constructor (props) {
+		super(props);
+		
+		this.state = {
+			currentImageIndex: 0
+		};
+		
+		this.nextSlide = this.nextSlide.bind(this);
+		this.previousSlide = this.previousSlide.bind(this);
+	}
+	
+	previousSlide () {
+		const lastIndex = imgUrls.length - 1;
+		const { currentImageIndex } = this.state;
+		const shouldResetIndex = currentImageIndex === 0;
+		const index =  shouldResetIndex ? lastIndex : currentImageIndex - 1;
+		
+		this.setState({
+			currentImageIndex: index
+		});
+	}
+	
+	nextSlide () {
+		const lastIndex = imgUrls.length - 1;
+		const { currentImageIndex } = this.state;
+		const shouldResetIndex = currentImageIndex === lastIndex;
+		const index =  shouldResetIndex ? 0 : currentImageIndex + 1;
 
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
+		this.setState({
+			currentImageIndex: index
+		});
+	}
+	
+	render () {
+		return (
+      
+			<div className="carousel">
+        
+				<Arrow direction="left" clickFunction={ this.previousSlide } glyph="&#9664;" />
+        <ImageSlide url={ imgUrls[this.state.currentImageIndex] } />
+        
+				<Arrow direction="right" clickFunction={ this.nextSlide } glyph="&#9654;" />
+        
+			</div>
+     
+		);
+	}
+}
 
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
+const Arrow = ({ direction, clickFunction, glyph }) => (
+	<div 
+		className={ `slide-arrow ${direction}` } 
+		onClick={ clickFunction }>
+		{ glyph } 
+	</div>
+);
 
-  const goToIndex = newIndex => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
+const ImageSlide = ({ url }) => {
+	const styles = {
+		backgroundImage: `url(${url})`,
+		backgroundSize: 'cover',
+		backgroundPosition: 'center'
+	};
+	
+	return (
+    <Fade up>
+		<div className="image-slide" style={styles}></div>
+    </Fade>
+	);
+}
 
-  const slides = items.map(item => {
-    return (
-      <CarouselItem
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-        key={item.src}
-        className="text-center"
-      >
-        <img
-          className="d-block w-100 image-slide"
-          style={{ textAlign: "center" }}
-          src={item.src}
-          alt={item.altText}
-        />
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
-      </CarouselItem>
-    );
-  });
+export default Carousel;
 
-  return (
-    <div id="carousel">
-      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-        <CarouselIndicators
-          items={items}
-          activeIndex={activeIndex}
-          onClickHandler={goToIndex}
-        />
-        {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={previous}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={next}
-        />
-      </Carousel>
-    </div>
-  );
-};
-
-export default StreamBox;

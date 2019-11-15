@@ -1,39 +1,29 @@
-import React from "react";
-import { Nav, NavItem, NavLink } from "reactstrap";
-import "./TopNav.css";
+import React from 'react';
+import Fade from 'react-reveal/Fade';
+import './TopNav.css';
 
-const TopNav = props => {
-  return (
-    <div>
-      <Nav>
-        <NavLink href="#" id="Home">
-          Logo
-        </NavLink>{" "}
-        <NavLink href="#" id="aboutUs">
-          About Us
-        </NavLink>{" "}
-        <NavLink href="#" id="wallet">
-          Wallet
-        </NavLink>{" "}
-        <NavLink href="#" id="shop">
-          Shop
-        </NavLink>{" "}
-        <div id="authentication">
-          <NavLink href="#" id="login">
-            Login
-          </NavLink>
-          <button
-            type="button"
-            className="btn btn-primary"
-            href="#"
-            id="signUp"
-          >
-            Sign Up
-          </button>
-        </div>
-      </Nav>
-    </div>
-  );
-};
+function Navbar() {
+    return (
+        <Fade left>
+            <header className="toolbar">
+                
+                <nav className="main-nav">
+                <a className="logo-txt" href="/">GAMBLR</a>
+                    <div className="nav-items">
+                        <Fade right>
+                        
+                        <ul>
+                          
+                            <li><a href="/">ABOUT US</a></li>
+                            <li><a href="/">WALLET</a></li>
+                            <li><a href="/">SHOP</a></li>
+                        </ul>
+                        </Fade>
+                    </div>
+                </nav>
+            </header>
+            </Fade>
+    );
+}
 
-export default TopNav;
+export default Navbar;
