@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom";
 import axios from 'axios';
 
 // import components
+import Bets from '../Bets';
 import Login from './login';
 import Signup from './signup';
 import Info from './info';
@@ -16,8 +17,8 @@ class Auth extends Component {
     loggedIn: false
   }
 
-  componentDidMount() {
-    this.getUser();
+ /*  componentDidMount() {
+    this.updateUser();
   }
 
   updateUser = (newUsername, newLoggedIn) => {
@@ -25,9 +26,9 @@ class Auth extends Component {
       username: newUsername,
       loggedIn: newLoggedIn
     });
-  }
+  } */
 
-  getUser = () => {
+/*   getUser = () => {
     axios.get('/user').then(response => {
       console.log('getting current user ... ');
       console.log(response.data);
@@ -46,11 +47,14 @@ class Auth extends Component {
         });
       };
     });
-  };
+  }; */
 
   render() {
     return (
       <div>
+        <Bets loggedIn={this.state.loggedIn}
+              username={this.state.username}
+        />
         <Info updateUser={this.updateUser}
               loggedIn={this.state.loggedIn}
         />
