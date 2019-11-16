@@ -17,6 +17,8 @@ function Navbar() {
                             <li><a href="/">ABOUT US</a></li>
                             <li><a href="/">WALLET</a></li>
                             <li><a href="/">SHOP</a></li>
+
+                    
                         </ul>
                         </Fade>
                     </div>

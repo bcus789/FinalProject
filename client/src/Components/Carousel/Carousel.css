@@ -2,7 +2,7 @@
 	height: 100vh;
     margin: 0 auto;
     width: 900px;
-    z-index: -2;
+    z-index: 4;
     overflow: hidden;
 }
 
@@ -47,3 +47,12 @@
     color: white;
     margin-left: 1rem;
 }
+
+@media (max-width: 1100px) {
+    .image-slide {
+        width: 400px;
+        height: 600px;
+    
+    }
+}
+
