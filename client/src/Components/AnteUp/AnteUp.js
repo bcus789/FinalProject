@@ -31,6 +31,7 @@ class AnteUp extends React.Component {
           <p>Expected Payout: {this.state.payout}</p>
           <Input name="wager" id="wager" placeholder="Bet Something" />
           <Button
+            className="anteButton"
             onClick={this.addAmountRed}
             id="redButton"
             addAmountRed={this.addAmountRed}
@@ -38,6 +39,7 @@ class AnteUp extends React.Component {
             Bet Red
           </Button>
           <Button
+            className="anteButton"
             onClick={this.addAmountBlack}
             id="blackButton"
             addAmountBlack={this.addAmountBlack}

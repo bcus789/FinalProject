@@ -1,18 +1,23 @@
 #anteUp {
   display: block;
   position: relative;
-  width: 300px;
+  width: 400px;
   height: 50px;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   color: aliceblue;
   text-align: center;
+  font-family: "Muli", sans-serif;
 }
-button {
+.anteButton {
+  margin-top: 15px !important;
   margin: 3px;
   margin-bottom: 30px;
-  color: black !important;
+  color: rgb(255, 255, 255) !important;
+  font-family: "Muli", sans-serif;
+  transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
+  background-color: #ed3ad0 !important;
 }
 p {
   display: flex;
