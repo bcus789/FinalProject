@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "./Carousel/Carousel.js";
 import LogModal from "./Modal/Modal.js";
 import "./App.css";
-import AnteUp from "./AnteUp/AnteUp.js";
+import AnteUp from "./AnteUp/Dropdown";
 import SideNav from "./SideNav/SideNav.js";
 import Navbar from "./TopNav/TopNav.js";
 import Stream from "./Stream.js";

@@ -1,6 +1,6 @@
 import React from "react";
 import "./AnteUp.css";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, Label, Input } from "reactstrap";
 const axios = require("axios");
 
 class AnteUp extends React.Component {
