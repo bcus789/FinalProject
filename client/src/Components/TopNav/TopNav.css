@@ -74,9 +74,10 @@ a {
   .main-nav {
     align-items: flex-center;
     margin-left: -100px;
+
   }
 
   .nav-items {
-    margin-left: 90px;
+   visibility: hidden;
   }
 }

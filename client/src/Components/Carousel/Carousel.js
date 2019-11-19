@@ -50,6 +50,7 @@ class Carousel extends React.Component {
         
 				<Arrow direction="left" clickFunction={ this.previousSlide } glyph="&#9664;" />
         <ImageSlide url={ imgUrls[this.state.currentImageIndex] } />
+		
         
 				<Arrow direction="right" clickFunction={ this.nextSlide } glyph="&#9654;" />
         
@@ -76,7 +77,9 @@ const ImageSlide = ({ url }) => {
 	
 	return (
     <Fade up>
-		<div className="image-slide" style={styles}></div>
+		<div className="image-slide" style={styles}>
+		<h1 className="event-title">Hello</h1>
+		</div>
     </Fade>
 	);
 }

@@ -19,7 +19,7 @@ class LogModal extends React.Component {
           <Modal show={this.state.show} handleClose={this.hideModal} >
             <Login />
           </Modal>
-          <button className="log-in" type='button' onClick={this.showModal}>Log In</button>
+          <button className="log-in" type='button' onClick={this.showModal}>LOG IN</button>
         </main>
       )
     }
@@ -32,10 +32,10 @@ class LogModal extends React.Component {
       <div className={showHideClassName}>
         <section className='modal-main'>
           {children}
-          <button
+          <button className="close-bttn"
             onClick={handleClose}
           >
-            Close
+            CLOSE
           </button>
         </section>
       </div>
