@@ -1,7 +1,7 @@
 #anteUp {
   display: block;
   position: relative;
-  width: 400px;
+  width: 800px;
   height: 50px;
   margin-top: 5%;
   margin-left: auto;
@@ -9,15 +9,22 @@
   color: aliceblue;
   text-align: center;
   font-family: "Muli", sans-serif;
+  font-weight: 800;
 }
 .anteButton {
   margin-top: 15px !important;
   margin: 3px;
   margin-bottom: 30px;
-  color: rgb(255, 255, 255) !important;
+  color: rgb(221, 217, 217) !important;
   font-family: "Muli", sans-serif;
   transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
   background-color: #ed3ad0 !important;
+  border: none;
+  font-family: "Muli", sans-serif;
+  font-weight: bolder;
+  font-size: 12px;
+  height: 32px;
+  border-radius: 4px;
 }
 p {
   display: flex;
@@ -26,4 +33,14 @@ p {
 }
 #payout {
   margin-bottom: 60px;
+}
+#label {
+  font-size: 20px !important;
+  font-weight: 800;
+}
+#numbers {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
