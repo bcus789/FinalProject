@@ -12,7 +12,7 @@ Google Chrome (or any other web browser) - https://www.google.com/chrome/?brand=
 
 ### Installing
 
-No installation required! Simply visit the website and discover some new ways to drink.
+No installation required! Simply visit the website and hopefully retire early.
 
 ## Deployment
 
