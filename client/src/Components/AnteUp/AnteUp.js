@@ -29,8 +29,13 @@ class AnteUp extends React.Component {
           <Label id="label" for="wager">
             ANTE UP
           </Label>
-          <p>Wallet: {this.state.wallet}</p>
-          <p>Expected Payout: {this.state.payout}</p>
+          <div id="quantities">
+            <p>WALLET: {this.state.wallet}</p>
+            <p>PAYOUT: {this.state.payout}</p>
+            <p>RED BET: {this.state.redbet}</p>
+            <p>BLACK BET: {this.state.blackbet}</p>
+          </div>
+
           <Input name="wager" id="wager" placeholder="Bet Something" />
           <Button
             className="anteButton"
@@ -38,7 +43,7 @@ class AnteUp extends React.Component {
             id="redButton"
             addAmountRed={this.addAmountRed}
           >
-            Bet Red
+            BET RED
           </Button>
           <Button
             className="anteButton"
@@ -46,10 +51,8 @@ class AnteUp extends React.Component {
             id="blackButton"
             addAmountBlack={this.addAmountBlack}
           >
-            Bet Black
+            BET BLACK
           </Button>
-          <p>Red Bet: {this.state.redbet}</p>
-          <p>Black Bet: {this.state.blackbet}</p>
         </Form>
       </div>
     );
