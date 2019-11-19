@@ -12,11 +12,10 @@ function App() {
   return (
     <div>
       <SideNav />
-
       <LogModal />
-
-      <Stream />
       <AnteUp />
+      <Stream />
+
       <Navbar />
     </div>
   );
