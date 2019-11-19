@@ -13,9 +13,9 @@ function App() {
     <div>
       <SideNav />
       <LogModal />
-      <AnteUp />
-      <Stream />
 
+      <Stream />
+      <AnteUp />
       <Navbar />
     </div>
   );

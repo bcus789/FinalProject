@@ -3,8 +3,8 @@ import "./Stream.css";
 
 function Stream() {
   const divStyle = {
-    height: 600,
-    width: 800
+    height: 550,
+    width: 1000
   };
   return (
     <iframe

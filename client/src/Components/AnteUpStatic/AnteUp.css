@@ -1,7 +1,6 @@
 #anteUp {
   display: block;
   position: relative;
-  width: 800px;
   height: 50px;
   margin-top: 5%;
   margin-left: auto;
@@ -39,8 +38,7 @@ p {
   font-weight: 800;
 }
 #quantities {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 100px !important;
   display: flex;
   justify-content: space-between;
 }
