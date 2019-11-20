@@ -9,12 +9,20 @@ const imgUrls = [
 
 ];
 
+const imgTxt = [
+	"CSGO",
+	"LoL",
+	"DOTA",
+	"COD"
+]
+
 class Carousel extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			currentImageIndex: 0
+			currentImageIndex: 0,
+			currentTxtIndex: 0
 		};
 
 		this.nextSlide = this.nextSlide.bind(this);
@@ -23,25 +31,38 @@ class Carousel extends React.Component {
 
 	previousSlide() {
 		const lastIndex = imgUrls.length - 1;
+		const lastTxt = imgTxt.length - 1;
 		const { currentImageIndex } = this.state;
+		const { currentTxtIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === 0;
+		const shouldResetText = currentTxtIndex === 0;
 		const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
+		const indexTxt = shouldResetText ? lastTxt : currentTxtIndex - 1;
 
 		this.setState({
-			currentImageIndex: index
+			currentImageIndex: index,
+			currentTxtIndex: indexTxt
 		});
 	}
 
 	nextSlide() {
 		const lastIndex = imgUrls.length - 1;
+		const lastTxt = imgTxt.length - 1;
 		const { currentImageIndex } = this.state;
+		const { currentTxtIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === lastIndex;
+		const shouldResetText = currentTxtIndex === lastTxt;
 		const index = shouldResetIndex ? 0 : currentImageIndex + 1;
+		const indexTxt = shouldResetText ? 0 : currentTxtIndex + 1;
 
 		this.setState({
-			currentImageIndex: index
+			currentImageIndex: index,
+			currentTxtIndex: indexTxt
 		});
 	}
+
+
+
 
 	render() {
 		return (
@@ -50,7 +71,6 @@ class Carousel extends React.Component {
 
 				<Arrow direction="left" clickFunction={this.previousSlide} glyph="&#9664;" />
 				<ImageSlide url={imgUrls[this.state.currentImageIndex]} />
-
 				<Arrow direction="right" clickFunction={this.nextSlide} glyph="&#9654;" />
 
 			</div>
@@ -73,10 +93,11 @@ const ImageSlide = ({ url }) => {
 		backgroundSize: 'cover',
 		backgroundPosition: 'center'
 	};
-
 	return (
 		<Fade up>
-			<div className="image-slide" style={styles}></div>
+			<div className="image-slide" style={styles}>
+				<h1 className="event-title">Hello</h1>
+			</div>
 		</Fade>
 	);
 }
