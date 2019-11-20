@@ -7,7 +7,6 @@ require('dotenv').config();
 const express = require("express");
 const morgan = require('morgan');
 const mongoose = require("mongoose");
-const session = require('express-session');
 const http = require('http');
 const socket = require('socket.io');
 const app = express();
@@ -17,17 +16,13 @@ const PORT = process.env.PORT || 5000;
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session({ 
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false })
-);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI);
 
 // Routes
 app.use('/api/user/', require("./routes/user"));
+app.use('/api/bet/', require("./routes/bets"));
 
 // Configure Socket IO
 const server = http.createServer(app);

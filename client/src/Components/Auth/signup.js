@@ -4,6 +4,7 @@ import axios from 'axios';
 class Signup extends Component {
   
   state = {
+    token: null,
     username: '',
     email: '',
     firstName: '',
@@ -30,8 +31,11 @@ class Signup extends Component {
         password: this.state.password
       }
 
-      axios.post("/user/register", data)
-        .then(response => console.log(response))
+      axios.post("/api/user/register", data)
+        .then(response => {
+          console.log(response)
+          this.setState({token: response.data.token})
+        })
         .catch(err => console.log(err));
     } else {
       alert('passwords did not match');
@@ -94,7 +98,7 @@ class Signup extends Component {
           <div>
             <label  htmlFor="confirmPass">Confirm Password: </label>
             <input  placeholder="Confirm"
-                    type="confirmPass"
+                    type="password"
                     name="confirmPass"
                     value={this.state.confirmPass}
                     onChange={this.handleChange} />

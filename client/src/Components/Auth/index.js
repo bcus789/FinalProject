@@ -1,69 +1,61 @@
 // import libraries
 import React, {Component} from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import axios from 'axios';
 
 // import components
-import Bets from '../Bets';
 import Login from './login';
 import Signup from './signup';
 import Info from './info';
-import Home from './home';
+import './index.css';
 
 class Auth extends Component {
 
   state = {
-    username: null,
-    loggedIn: false
+    email: null,
+    loggedIn: false,
+    token: null
   }
 
- /*  componentDidMount() {
-    this.updateUser();
+  componentDidMount() {
+    this.getUser();
   }
 
-  updateUser = (newUsername, newLoggedIn) => {
-    this.setState({
-      username: newUsername,
-      loggedIn: newLoggedIn
-    });
-  } */
+  updateUser = (email, loggedIn, token) => {
+    this.setState({ email, loggedIn, token });
+  }
 
-/*   getUser = () => {
-    axios.get('/user').then(response => {
-      console.log('getting current user ... ');
-      console.log(response.data);
+  getUser = () => {
+    axios.get('/api/user/info', 
+      {headers:{"x-auth-token":this.state.token}})
+      .then(response => {
       if (response.data.user) {
-        console.log('User found in server session: ');
         console.log(response.data.user);
         this.setState({
-          username: response.data.user.username,
-          loggedIn: true
+          email: response.data.email,
+          loggedIn: true,
+          token: response.data.token
         });
       } else {
-        console.log('No user found in server session');
+        console.log('No user found on server');
         this.setState({
-          username: null,
-          loggedIn: false
+          email: null,
+          loggedIn: false,
+          token: null
         });
       };
     });
-  }; */
+  };
 
   render() {
     return (
-      <div>
-        <Bets loggedIn={this.state.loggedIn}
-              username={this.state.username}
-        />
+      <div id='auth-container'>
         <Info updateUser={this.updateUser}
               loggedIn={this.state.loggedIn}
         />
         {this.state.loggedIn && 
           <p>Welcome Back, {this.state.username}!</p>
         }
-        
-        <Route  exact path="/"
-                component={Home} />
         
         <Route  path="/login" 
                 render={() => 
