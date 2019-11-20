@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
+import "../Modal/Modal.css";
 
 class Login extends Component {
 
@@ -40,7 +41,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <h2>Login Form</h2>
+        <h2 className="login-txt">Login</h2>
         <form>
           <div>
             
@@ -55,8 +56,8 @@ class Login extends Component {
           </div>
 
           <div>
-            <label htmlFor="password">Password: </label>
-            <input
+          
+            <input className="password-input"
                 placeholder="password"
                 type="password"
                 name="password"
@@ -66,7 +67,7 @@ class Login extends Component {
 
           <div>
             <button onClick={this.handleSubmit}
-                    type="submit">Login
+                    type="submit">LOG IN
             </button>
           </div>
 
