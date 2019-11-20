@@ -4,7 +4,7 @@ import "./Stream.css";
 function Stream() {
   const divStyle = {
     height: 550,
-    width: 1000
+    width: 980
   };
   return (
     <iframe
