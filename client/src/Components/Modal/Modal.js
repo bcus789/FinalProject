@@ -1,6 +1,7 @@
 
 import React from "react";
 import Login from "../Auth/login.js";
+import Fade from 'react-reveal/Fade';
 import "./Modal.css";
 class LogModal extends React.Component {
     state = { show: false }
@@ -19,7 +20,7 @@ class LogModal extends React.Component {
           <Modal show={this.state.show} handleClose={this.hideModal} >
             <Login />
           </Modal>
-          <button className="log-in" type='button' onClick={this.showModal}>LOG IN</button>
+          <Fade right><button className="log-in" type='button' onClick={this.showModal}>LOG IN</button></Fade>
         </main>
       )
     }
