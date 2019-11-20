@@ -30,6 +30,10 @@ class Login extends Component {
         console.log(response)
         if (response.status === 200) {
           this.props.updateUser(response.data.email, true, response.data.token)
+          window.localStorage.setItem({
+            token: response.data.token,
+            email: response.data.email
+          })
           console.log('successfully logged in user: ' + this.state.email);
         } else {
           console.log('Log in failed');

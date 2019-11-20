@@ -1,20 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router} from "react-router-dom";
-import Carousel from "./Components/Carousel/Carousel.js"
-import SideNav from "./Components/SideNav/SideNav.js"
-import Navbar from "./Components/TopNav/TopNav.js";
-import Auth from "./Components/Auth";
+
+import LogModal from "./Components/Modal/Modal.js";
 import "./App.css";
+import AnteUp from "./Components/AnteUp/Dropdown";
+import SideNav from "./Components/SideNav/SideNav.js";
+import Navbar from "./Components/TopNav/TopNav.js";
+import Stream from "./Components/Stream.js";
 
 function App() {
   return (
     <Router>
-      <div>
-        <SideNav />
-        <Carousel />
-        <Auth />
-        <Navbar /> 
-      </div> 
+    <div>
+      <SideNav />
+      <LogModal />
+
+      <Stream />
+      <AnteUp />
+      <Navbar />
+    </div>
     </Router>
   );
 }
