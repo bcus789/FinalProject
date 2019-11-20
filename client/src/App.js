@@ -11,8 +11,8 @@ function App() {
     <Router>
       <div>
         <SideNav />
-        <Auth />
         <Carousel />
+        <Auth />
         <Navbar /> 
       </div> 
     </Router>

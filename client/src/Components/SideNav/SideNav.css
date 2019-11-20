@@ -19,7 +19,6 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  
 }
 
 .home-inner {
@@ -46,7 +45,6 @@
 }
 
 .events-indicator:hover {
-
   margin-left: -17px;
   margin-top: 139px;
   border: 3px solid #999999;
@@ -55,7 +53,6 @@
 }
 
 .events-indicator:hover .events-inner {
-  
   box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
   background-color: rgb(255, 255, 255);
   margin-top: 2px;
@@ -66,10 +63,8 @@
 
 .events-indicator:hover p {
   transition: all 0.2s ease-in-out;
- color: white;
- 
+  color: white;
 }
-
 
 .events-inner {
   transition: all 0.2s ease-in-out;
@@ -78,9 +73,8 @@
   border-radius: 30px;
   margin-left: 5px;
   margin-top: 5px;
-  background-color: #826ABA;
+  background-color: #826aba;
   z-index: 3;
- 
 }
 
 /* .events-inner:hover {
@@ -91,8 +85,6 @@
   height: 24px;
  
 } */
-
-
 
 .payments-indicator {
   width: 30px;
@@ -108,7 +100,6 @@
 }
 
 .payments-indicator:hover {
-  
   margin-left: -17px;
   margin-top: 278px;
   border: 3px solid #999999;
@@ -117,7 +108,6 @@
 }
 
 .payments-indicator:hover .payments-inner {
-  
   box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
   background-color: rgb(255, 255, 255);
   margin-top: 2px;
@@ -128,8 +118,7 @@
 
 .payments-indicator:hover p {
   transition: all 0.2s ease-in-out;
- color: white;
- 
+  color: white;
 }
 
 .payments-inner {
@@ -139,9 +128,9 @@
   border-radius: 30px;
   margin-left: 5px;
   margin-top: 5px;
-  background-color: #826ABA;
+  background-color: #826aba;
   z-index: 3;
- position: absolute;
+  position: absolute;
 }
 
 .leaderboard-indicator {
@@ -155,11 +144,9 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease-in-out;
-  
 }
 
 .leaderboard-indicator:hover {
-  
   margin-left: -18px;
   margin-top: 424px;
   border: 3px solid #999999;
@@ -168,7 +155,6 @@
 }
 
 .leaderboard-indicator:hover .leaderboard-inner {
-
   box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
   background-color: rgb(255, 255, 255);
   margin-top: 2px;
@@ -179,8 +165,7 @@
 
 .leaderboard-indicator:hover p {
   transition: all 0.2s ease-in-out;
- color: white;
- 
+  color: white;
 }
 
 .leaderboard-inner {
@@ -189,14 +174,14 @@
   border-radius: 30px;
   margin-left: 5px;
   margin-top: 5px;
-  background-color: #826ABA;
+  background-color: #826aba;
   transition: all 0.2s ease-in-out;
   z-index: 3;
- position: absolute;
+  position: absolute;
 }
 
 .home-txt {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: bolder;
   font-size: 13px;
   color: white;
@@ -205,7 +190,7 @@
 }
 
 .events-txt {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: 800;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.294);
@@ -214,7 +199,7 @@
 }
 
 .payments-txt {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: 800;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.294);
@@ -223,7 +208,7 @@
 }
 
 .leaderboard-txt {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: 800;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.294);
@@ -236,4 +221,3 @@
     visibility: hidden;
   }
 }
-
