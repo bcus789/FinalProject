@@ -18,6 +18,13 @@ export default class Dropdown extends React.Component {
     blackBet: 0,
     isOpen: false
   };
+  addAmountRed = () => {
+    this.setState(prevState => ({ redBet: 10 }));
+  };
+
+  addAmountBlack = () => {
+    this.setState(prevState => ({ blackBet: 20 }));
+  };
 
   handleToggle = () => {
     this.setState(() => ({ isOpen: !this.state.isOpen }));
@@ -42,12 +49,16 @@ export default class Dropdown extends React.Component {
                   <p>RED BET: {this.state.redBet}</p>
                   <p>BLACK BET: {this.state.blackBet}</p>
                   <p>EXPECTED PAYOUT: {this.state.payout}</p>
-                  <p>WALLET: 500 {this.state.wallet}</p>
+                  <p>WALLET: {this.state.wallet}</p>
                 </div>
                 <div id="betInput">
                   <Input name="wager" id="wager" placeholder="Bet Something" />
-                  <Button className="anteButton">BET RED</Button>
-                  <Button className="anteButton">BET BLACK</Button>
+                  <Button onClick={this.addAmountRed} className="anteButton">
+                    BET RED
+                  </Button>
+                  <Button onClick={this.addAmountBlack} className="anteButton">
+                    BET BLACK
+                  </Button>
                 </div>
               </Form>
             </CardBody>
