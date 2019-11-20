@@ -10,15 +10,6 @@ import {
 } from "reactstrap";
 import "./Dropdown.css";
 
-// const AnteUp = props => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const toggle = () => setIsOpen(!isOpen);
-
-//   return (
-
-//   );
-// };
-
 export default class Dropdown extends React.Component {
   state = {
     wallet: 0,
