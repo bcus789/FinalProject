@@ -10,44 +10,62 @@ import {
 } from "reactstrap";
 import "./Dropdown.css";
 
-const AnteUp = props => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+// const AnteUp = props => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const toggle = () => setIsOpen(!isOpen);
 
-  return (
-    <div id="anteUp">
-      <Button
-        id="anteUpButton"
-        color="primary"
-        onClick={toggle}
-        style={{ marginBottom: "1rem" }}
-      >
-        ANTE-UP BUTTERCUP
-      </Button>
-      <Collapse isOpen={isOpen}>
-        <Card>
-          <CardBody>
-            <Form>
-              <div id="quantities">
-                <p>RED BET: 0</p>
-                <p>BLACK BET: 0</p>
-                <p>EXPECTED PAYOUT:</p>
-                <p>WALLET: 500</p>
-              </div>
-              <div id="betInput">
-                <Input name="wager" id="wager" placeholder="Bet Something" />
-                <Button className="anteButton">BET RED</Button>
-                <Button className="anteButton">BET BLACK</Button>
-              </div>
-            </Form>
-          </CardBody>
-        </Card>
-      </Collapse>
-    </div>
-  );
-};
+//   return (
 
-export default AnteUp;
+//   );
+// };
+
+export default class Dropdown extends React.Component {
+  state = {
+    wallet: 0,
+    payout: 0,
+    redBet: 0,
+    blackBet: 0,
+    isOpen: false
+  };
+
+  handleToggle = () => {
+    this.setState(() => ({ isOpen: !this.state.isOpen }));
+  };
+
+  render() {
+    return (
+      <div id="anteUp">
+        <Button
+          id="anteUpButton"
+          color="primary"
+          style={{ marginBottom: "1rem" }}
+          onClick={this.handleToggle}
+        >
+          ANTE-UP BUTTERCUP
+        </Button>
+        <Collapse isOpen={this.state.isOpen}>
+          <Card>
+            <CardBody>
+              <Form>
+                <div id="quantities">
+                  <p>RED BET: {this.state.redBet}</p>
+                  <p>BLACK BET: {this.state.blackBet}</p>
+                  <p>EXPECTED PAYOUT: {this.state.payout}</p>
+                  <p>WALLET: 500 {this.state.wallet}</p>
+                </div>
+                <div id="betInput">
+                  <Input name="wager" id="wager" placeholder="Bet Something" />
+                  <Button className="anteButton">BET RED</Button>
+                  <Button className="anteButton">BET BLACK</Button>
+                </div>
+              </Form>
+            </CardBody>
+          </Card>
+        </Collapse>
+      </div>
+    );
+  }
+}
 
 // import React, { useState } from "react";
 // import {
