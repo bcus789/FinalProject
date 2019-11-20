@@ -1,0 +1,66 @@
+#anteUp {
+  display: block;
+  position: relative;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  font-weight: 800;
+}
+.anteButton {
+  margin: 5px;
+  color: rgb(221, 217, 217) !important;
+  font-family: "Muli", sans-serif;
+  transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
+  background-color: #ed3ad0 !important;
+  border: none;
+  font-family: "Muli", sans-serif;
+  font-weight: bolder;
+  font-size: 12px;
+  height: 32px;
+  border-radius: 4px;
+}
+p {
+  display: flex;
+}
+.bet {
+}
+#payout {
+  margin-bottom: 60px;
+}
+#label {
+  font-size: 20px !important;
+  font-weight: 800;
+}
+#quantities {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 80%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+#anteUpButton {
+  color: rgb(221, 217, 217) !important;
+  font-family: "Muli", sans-serif;
+  transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
+  background-color: #ed3ad0 !important;
+  border: none;
+  font-family: "Muli", sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
+  height: 50px;
+  border-radius: 4px;
+  margin-bottom: 40px !important;
+  margin-top: -40px;
+}
+#cardBody {
+  adding-bottom: 100px !important;
+}
+#betInput {
+  display: inline-flex;
+  align-items: center;
+  width: 50%;
+}

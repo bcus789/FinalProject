@@ -29,7 +29,7 @@ class AgeVar extends React.Component {
   render() {
     return (
       <div>
-        <h2>Age Var Here</h2>
+        <h6>Age Var Here</h6>
         <div id="myModal" className="modal">
           <div className="modal-content">
             <span className="close">&times;</span>
