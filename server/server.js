@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
-	console.log('loading dev environments');
-	require('dotenv').config();
+  console.log('loading dev environments');
+  require('dotenv').config();
 }
 require('dotenv').config();
 
@@ -19,10 +19,11 @@ const PORT = process.env.PORT || 5000;
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session({ 
+app.use(session({
   secret: 'secret',
   resave: false,
-  saveUninitialized: false })
+  saveUninitialized: false
+})
 );
 
 // Configure Passport

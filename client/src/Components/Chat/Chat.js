@@ -10,7 +10,7 @@ class Chat extends React.Component {
             messages: []
         };
 
-        this.socket = io('localhost:3001');
+        this.socket = io('localhost:5001');
 
         this.sendMessage = ev => {
             ev.preventDefault();
