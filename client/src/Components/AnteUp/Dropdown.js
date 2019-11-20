@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Fade from "react-reveal/Fade";
+
 import {
   Collapse,
   Button,
@@ -33,14 +35,16 @@ export default class Dropdown extends React.Component {
   render() {
     return (
       <div id="anteUp">
-        <Button
-          id="anteUpButton"
-          color="primary"
-          style={{ marginBottom: "1rem" }}
-          onClick={this.handleToggle}
-        >
-          ANTE-UP BUTTERCUP
-        </Button>
+        <Fade bottom>
+          <Button
+            id="anteUpButton"
+            color="primary"
+            style={{ marginBottom: "1rem" }}
+            onClick={this.handleToggle}
+          >
+            ANTE-UP BUTTERCUP
+          </Button>
+        </Fade>
         <Collapse isOpen={this.state.isOpen}>
           <Card>
             <CardBody>
