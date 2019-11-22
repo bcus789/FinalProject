@@ -5,8 +5,14 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^0.18.0",
+<<<<<<< HEAD
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+=======
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-reveal": "^1.2.2",
+>>>>>>> 033de1e13e482ff410d5cec5b2060cc564079e77
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.1",
     "reactstrap": "^8.1.1"
