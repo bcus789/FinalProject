@@ -46,7 +46,8 @@
   background: white;
   width: 40%;
   text-align: center;
-  height: auto;
+  height: 100%;
+  z-index: 0;
   padding: 28px 0px 48px 0px;
   border-radius: 12px;
   top: 50%;

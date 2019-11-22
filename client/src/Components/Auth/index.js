@@ -12,39 +12,30 @@ import './index.css';
 class Auth extends Component {
 
   state = {
+    username: null,
     email: null,
     loggedIn: false,
     token: null
   }
 
   componentDidMount() {
-    this.getUser();
+    if (localStorage.getItem('token')) this.getUser();
   }
 
-  updateUser = (email, loggedIn, token) => {
-    this.setState({ email, loggedIn, token });
+  updateUser = (email, username, loggedIn, token) => {
+    this.setState({ email, username, loggedIn, token });
   }
 
   getUser = () => {
-    axios.get('/api/user/info', 
-      {headers:{"x-auth-token":this.state.token}})
+    axios.get('/api/user/info', {headers:{"x-auth-token":localStorage.getItem('token')}})
       .then(response => {
-      if (response.data.user) {
-        console.log(response.data.user);
-        this.setState({
-          email: response.data.email,
-          loggedIn: true,
-          token: response.data.token
-        });
-      } else {
-        console.log('No user found on server');
-        this.setState({
-          email: null,
-          loggedIn: false,
-          token: null
-        });
-      };
-    });
+        if (response.data.user) {
+          this.updateUser(response.data.user.email, response.data.user.username, true, response.data.token)
+        } else {
+          console.log('No user or Invalid token');
+          this.updateUser(null, null, false, null)
+        };
+      });
   };
 
   render() {
@@ -53,9 +44,10 @@ class Auth extends Component {
         <Info updateUser={this.updateUser}
               loggedIn={this.state.loggedIn}
         />
-        {this.state.loggedIn && 
-          <p>Welcome Back, {this.state.username}!</p>
+        { this.state.loggedIn &&
+            <p>Welcome Back, {this.state.username}!</p>
         }
+        
         
         <Route  path="/login" 
                 render={() => 
