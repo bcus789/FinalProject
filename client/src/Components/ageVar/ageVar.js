@@ -1,43 +1,40 @@
 import React from "react";
 import "./ageVar.css";
-// const modal = getElementById("myModal");
-// const exit = getElementsByClassName("close")[0];
 
-// window.onload = function() {
-//   modal.style.display = "block";
+export default class AgeVar extends React.Component {
+  state = {
+    isOpen: true
+  };
 
-//   var is21 = localStorage.getItem("is21");
+  is21 = e => {
+    console.log(e);
+  };
 
-//   is21 === "true"
-//     ? (modal.style.display = "none")
-//     : (modal.style.display = "block");
+  clubPenguin = e => {
+    console.log("hi");
+  };
 
-//   exit.onclick = () => {
-//     location.href = "https://www.disney.com";
-//   };
-//   document.getElementById("no").onclick = function() {
-//     localStorage.setItem("is21", "false");
-//     location.href = "https://cponline.pw/";
-//   };
-//   document.getElementById("yes").onclick = function() {
-//     localStorage.setItem("is21", "true");
-//     modal.style.display = "none";
-//   };
-// };
-
-class AgeVar extends React.Component {
   render() {
     return (
-      <div>
-        <h6>Age Var Here</h6>
-        <div id="myModal" className="modal">
-          <div className="modal-content">
-            <span className="close">&times;</span>
+      <div id="ageVar">
+        <div className="body">
+          <div>
             <p id="age">You must be 21 or over to view this page</p>
-            <button type="button" className="no" id="no">
+            <button
+              onClick={this.clubPenguin}
+              type="button"
+              className="no"
+              id="no"
+            >
               Leave
             </button>
-            <button type="button" className="yes" id="yes" data-dismiss="modal">
+            <button
+              onClick={this.is21}
+              type="button"
+              className="yes"
+              id="yes"
+              data-dismiss="modal"
+            >
               Enter
             </button>
           </div>
@@ -46,5 +43,3 @@ class AgeVar extends React.Component {
     );
   }
 }
-
-export default AgeVar;

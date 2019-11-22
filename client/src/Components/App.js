@@ -7,16 +7,16 @@ import AnteUp from "./AnteUp/Dropdown";
 import SideNav from "./SideNav/SideNav.js";
 import Navbar from "./TopNav/TopNav.js";
 import Stream from "./Stream.js";
+import AgeVar from "./ageVar/ageVar.js";
 
 function App() {
   return (
     <div>
+      <Navbar />
       <SideNav />
       <LogModal />
-
       <Stream />
       <AnteUp />
-      <Navbar />
     </div>
   );
 }
