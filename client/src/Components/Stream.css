@@ -4,4 +4,5 @@
   margin-right: auto;
   margin-top: 7%;
   box-shadow: 3px 3px 8px 2px;
+  z-index: 1;
 }
