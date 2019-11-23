@@ -10,7 +10,7 @@ class LogModal extends Component {
       show: false,
       btnMsg: 'LOG-IN',
       loggedIn: false,
-      token: null,
+      token: null
     }
   
     componentDidMount() {
