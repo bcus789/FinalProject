@@ -19,13 +19,18 @@
        height: 32px;
        border-radius: 4px;
        color: white;
-     
        outline: none;
        background-color: #ED3AD0;
        z-index: 500;
        margin-left: 80vw;
        transition: 0.8s cubic-bezier(0.2, 0.82, 0.2, 1);
        margin-top: 28px;
+   }
+
+   @media (max-width: 500px) {
+     .log-in {
+       margin-left: 73vw;
+     }
    }
 
    .login-txt {
