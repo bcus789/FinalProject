@@ -10,8 +10,7 @@ function Events() {
         <div>
             <SideNav />
             <Navbar />
-            {/* <Stream /> */}
-            <AnteUp />
+            <Stream />
         </div>
     );
 }

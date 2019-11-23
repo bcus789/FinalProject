@@ -14,7 +14,7 @@ function Stream() {
       frameborder="0"
       scrolling="no"
       allowfullscreen="true"
-      time="01h05m0s"
+      time="1h5m0s"
     ></iframe>
   );
 }
