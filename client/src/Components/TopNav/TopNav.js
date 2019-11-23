@@ -2,6 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-router-dom'
 
+
 import './TopNav.css';
 
 function Navbar() {
@@ -10,7 +11,7 @@ function Navbar() {
             <header className="toolbar">
 
                 <nav className="main-nav">
-                    <a className="logo-txt" href="/">GAMBLR</a>
+                    <a className="logo-txt" ><Link to='/'>GAMBLR</Link></a>
                     <div className="nav-items">
                         <Fade right>
                             <ul>

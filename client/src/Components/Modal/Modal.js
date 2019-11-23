@@ -1,11 +1,24 @@
 
-import React from "react";
-import Login from "../Auth/login.js";
+import React, {Component} from "react";
+import Auth from "../Auth";
 import Fade from 'react-reveal/Fade';
 import "./Modal.css";
-class LogModal extends React.Component {
-    state = { show: false }
+
+class LogModal extends Component {
+    
+    state = { 
+      show: false,
+      btnMsg: 'LOG-IN',
+      loggedIn: false,
+      token: null,
+    }
   
+    componentDidMount() {
+      if (this.props.token) {
+        this.setState({token: this.props.token, loggedIn: true})
+      }
+    }
+
     showModal = () => {
       this.setState({ show: true });
     }
@@ -15,12 +28,21 @@ class LogModal extends React.Component {
     }
       
     render() {
+      
+      if (this.state.loggedIn) {
+        this.setState({btnMsg: 'LOG OUT'});
+      }
+      
       return (
         <main>
           <Modal show={this.state.show} handleClose={this.hideModal} >
-            <Login />
+            <Auth />
           </Modal>
-          <Fade right><button className="log-in" type='button' onClick={this.showModal}>LOG IN</button></Fade>
+          <Fade right>
+            <button className="log-in" type='button' onClick={this.showModal}>
+              {this.state.btnMsg}
+            </button>
+          </Fade>
         </main>
       )
     }

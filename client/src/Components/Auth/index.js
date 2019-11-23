@@ -1,65 +1,53 @@
 // import libraries
 import React, {Component} from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import axios from 'axios';
 
 // import components
 import Login from './login';
 import Signup from './signup';
 import Info from './info';
-import Home from './home';
+import './index.css';
 
 class Auth extends Component {
 
   state = {
     username: null,
-    loggedIn: false
+    email: null,
+    loggedIn: false,
+    token: null
   }
 
   componentDidMount() {
-    this.getUser();
+    if (localStorage.getItem('token')) this.getUser();
   }
 
-  updateUser = (newUsername, newLoggedIn) => {
-    this.setState({
-      username: newUsername,
-      loggedIn: newLoggedIn
-    });
+  updateUser = (email, username, loggedIn, token) => {
+    this.setState({ email, username, loggedIn, token });
   }
 
   getUser = () => {
-    axios.get('/user').then(response => {
-      console.log('getting current user ... ');
-      console.log(response.data);
-      if (response.data.user) {
-        console.log('User found in server session: ');
-        console.log(response.data.user);
-        this.setState({
-          username: response.data.user.username,
-          loggedIn: true
-        });
-      } else {
-        console.log('No user found in server session');
-        this.setState({
-          username: null,
-          loggedIn: false
-        });
-      };
-    });
+    axios.get('/api/user/info', {headers:{"x-auth-token":localStorage.getItem('token')}})
+      .then(response => {
+        if (response.data.user) {
+          this.updateUser(response.data.user.email, response.data.user.username, true, response.data.token)
+        } else {
+          console.log('No user or Invalid token');
+          this.updateUser(null, null, false, null)
+        };
+      });
   };
 
   render() {
     return (
-      <div>
+      <div id='auth-container'>
         <Info updateUser={this.updateUser}
               loggedIn={this.state.loggedIn}
         />
-        {this.state.loggedIn && 
-          <p>Welcome Back, {this.state.username}!</p>
+        { this.state.loggedIn &&
+            <p>Welcome Back, {this.state.username}!</p>
         }
         
-        <Route  exact path="/"
-                component={Home} />
         
         <Route  path="/login" 
                 render={() => 
