@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://Gamblr:pass123@ds339968.mlab.com:39968/heroku_6r0c5z57');
 
 // Routes
 app.use('/api/user/', require("./routes/user"));
@@ -36,9 +36,9 @@ io.on('connection', (socket) => {
 });
 
 // Serve up static assets (usually on heroku)
-/* if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-} */
+}
 
 // Start the server
 server.listen(PORT, function () {
