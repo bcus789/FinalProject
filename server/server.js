@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== 'production') {
 require('dotenv').config();
 
 const express = require("express");
-//const morgan = require('morgan');
 const mongoose = require("mongoose");
 const http = require('http');
 const socket = require('socket.io');
@@ -13,13 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Configure middleware
-//app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Connect to the Mongo DB
-//mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/testdb');
-mongoose.connect('Gamblr:pass123@ds339968.mlab.com:39968/heroku_6r0c5z57');
+mongoose.connect(process.env.MONGODB_URI);
 
 // Routes
 app.use('/api/user/', require("./routes/user"));
