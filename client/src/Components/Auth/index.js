@@ -14,26 +14,26 @@ class Auth extends Component {
   state = {
     username: null,
     email: null,
-    loggedIn: false,
-    token: null
+    loggedIn: false
   }
 
   componentDidMount() {
     if (localStorage.getItem('token')) this.getUser();
   }
 
-  updateUser = (email, username, loggedIn, token) => {
-    this.setState({ email, username, loggedIn, token });
+  updateUser = (email, username, wallet, loggedIn) => {
+    this.setState({ email, username, wallet, loggedIn});
   }
 
   getUser = () => {
     axios.get('/api/user/info', {headers:{"x-auth-token":localStorage.getItem('token')}})
       .then(response => {
-        if (response.data.user) {
-          this.updateUser(response.data.user.email, response.data.user.username, true, response.data.token)
+        console.log(response.data);
+        if (response.data) {
+          this.updateUser(response.data.email, response.data.username, response.data.wallet, true)
         } else {
           console.log('No user or Invalid token');
-          this.updateUser(null, null, false, null)
+          this.updateUser(null, null, false)
         };
       });
   };
