@@ -13,12 +13,11 @@ function Navbar() {
                     <a className="logo-txt" href="/">GAMBLR</a>
                     <div className="nav-items">
                         <Fade right>
-
                             <ul>
-
                                 <Link to='/about' >About</Link>
+                                <br />
+                                <Link to='/wallet' >Wallet</Link>
 
-                                <li><a href="/">WALLET</a></li>
                                 <li><a href="/">SHOP</a></li>
 
 
