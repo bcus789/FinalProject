@@ -7,7 +7,8 @@ const user = new Schema(
     email: { type: String, required: false },
     firstName: { type: String, required: false },
     lastName: { type: String, required: false },
-    password: { type: String, required: false }
+    password: { type: String, required: false },
+    wallet: {type: Number, default: 1500}
   },
   {
     timestamps: true

@@ -29,12 +29,22 @@ class Login extends Component {
       .then(response => {
         console.log(response);
         if (response.status === 200) {
+<<<<<<< HEAD
           this.props.updateUser(response.data.email, true, response.data.token);
           window.localStorage.setItem({
             token: response.data.token,
             email: response.data.email
           });
           console.log("successfully logged in user: " + this.state.email);
+=======
+          this.props.updateUser(
+              response.data.user.email,
+              response.data.user.username,
+              true,
+              response.data.token)
+          localStorage.setItem('token', response.data.token)
+          console.log('successfully logged in user: ' + this.state.email);
+>>>>>>> 99b75918d59b5e6039d0c3672f7b6db413673dcf
         } else {
           console.log("Log in failed");
         }
