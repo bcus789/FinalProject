@@ -11,6 +11,7 @@ function Events() {
             <SideNav />
             <Navbar />
             <Stream />
+
         </div>
     );
 }
