@@ -1,6 +1,6 @@
 # Gamblr
 
-Trash talk gets old. It's time to put your money where your mouth is. Unless of course you are a liar. Are you a liar?
+Trash talk gets old. It's time to put your money where your mouth is. Unless of course you are a loud-mouth liar. Are you a liar?
 
 ## Getting Started
 
@@ -21,15 +21,18 @@ Heroku
 ## Built With
 
 - VS Code
-- MySQL
+- MongoDB
+- Json Web Tokens
 - Express.js
 - React Strap
+- Figma
 
 ## Authors
 - **Ryan Aldrin** - https://github.com/akaryrye
 - **Bryan Ponce De Leon** - https://github.com/bryanpdl
 - **Victor Lopez** - https://github.com/victore94
 - **Eugenio Bonello** - https://github.com/bcus789
+- **Toneth Tembrevilla** - https://github.com/TonethT
 
 [contributors](https://github.com/victore94/EggshellAndBeige/graphs/contributors) who participated in this project.
 
