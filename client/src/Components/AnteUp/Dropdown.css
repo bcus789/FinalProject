@@ -33,6 +33,7 @@ p {
   justify-content: space-between;
 }
 #anteUpButton {
+  position: relative;
   letter-spacing: 3px;
   color: rgb(255, 255, 255) !important;
   font-family: "Muli", sans-serif;
@@ -41,8 +42,8 @@ p {
   border: none;
   font-family: "Muli", sans-serif;
   font-weight: bolder;
-  font-size: 15px;
-  height: 50px;
+  font-size: 12px;
+  height: 30px;
   border-radius: 4px;
   margin-bottom: 40px !important;
   margin-top: -40px;
