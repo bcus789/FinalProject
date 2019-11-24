@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Redirect } from "react-router-dom";
 import axios from 'axios';
 
 class Signup extends Component {
   
   state = {
-    token: null,
     username: '',
     email: '',
     firstName: '',
@@ -34,7 +34,15 @@ class Signup extends Component {
       axios.post("/api/user/register", data)
         .then(response => {
           console.log(response)
-          this.setState({token: response.data.token})
+          this.props.updateUser(
+            response.data.user.username,
+            response.data.user.email,
+            response.data.user.firstName,
+            response.data.user.lastName,
+            response.data.user.wallet,
+            true)
+        localStorage.setItem('token', response.data.token)
+        this.props.hideModal()
         })
         .catch(err => console.log(err));
     } else {
@@ -45,6 +53,8 @@ class Signup extends Component {
   };
 
   render() {
+    if (this.props.loggedIn) return <Redirect to='/' />
+
     return (
       <div>
         <h2>Registration Form</h2>

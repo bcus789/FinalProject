@@ -8,15 +8,7 @@ class LogModal extends Component {
     
     state = { 
       show: false,
-      btnMsg: 'LOG-IN',
-      loggedIn: false,
-      token: null
-    }
-  
-    componentDidMount() {
-      if (this.props.token) {
-        this.setState({token: this.props.token, loggedIn: true})
-      }
+      btnMsg: 'LOG-IN'
     }
 
     showModal = () => {
@@ -36,7 +28,10 @@ class LogModal extends Component {
       return (
         <main>
           <Modal show={this.state.show} handleClose={this.hideModal} >
-            <Auth />
+            <Auth username={this.props.username}
+                  loggedIn={this.props.loggedIn}
+                  updateUser={this.props.updateUser}
+                  hideModal={this.hideModal} />
           </Modal>
           <Fade right>
             <button className="log-in" type='button' onClick={this.showModal}>
