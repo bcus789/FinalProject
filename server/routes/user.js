@@ -41,7 +41,8 @@ router.route("/register")
                         username: user.username,
                         email: user.email,
                         firstName: user.firstName,
-                        lastName: user.lastName
+                        lastName: user.lastName,
+                        wallet: user.wallet
                       }
                     })
                   }
@@ -80,9 +81,11 @@ router.route('/auth')
               res.json({
                 token,
                 user: {
-                  id: user._id,
                   username: user.username,
-                  email: user.email
+                  email: user.email,
+                  firstName: user.firstName,
+                  lastName: user.lastName,
+                  wallet: user.wallet
                 }
               });
             }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Redirect } from "react-router-dom";
 import axios from "axios";
 import "../Modal/Modal.css";
 
@@ -11,9 +11,8 @@ class Login extends Component {
   };
 
   // update state on form input
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({[name]: value });
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value });
   };
 
   // post login info to /api/user/auth
@@ -30,20 +29,24 @@ class Login extends Component {
         console.log(response)
         if (response.status === 200) {
           this.props.updateUser(
-              response.data.user.email,
               response.data.user.username,
-              true,
-              response.data.token)
+              response.data.user.email,
+              response.data.user.firstName,
+              response.data.user.lastName,
+              response.data.user.wallet,
+              true)
           localStorage.setItem('token', response.data.token)
           console.log('successfully logged in user: ' + this.state.email);
+          this.props.hideModal()
         } else {
-          console.log('Log in failed');
+          console.log('Unable to sign in user');
         }
       })
       .catch(err => console.log(err));
   }
 
   render() {
+    if (this.props.loggedIn) return <Redirect to='/' />
     return (
       <div>
         <h2 className="login-txt">Login</h2>
