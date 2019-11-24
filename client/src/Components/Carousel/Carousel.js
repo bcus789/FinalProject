@@ -31,7 +31,7 @@ class Carousel extends React.Component {
 
 	previousSlide() {
 		const lastIndex = imgUrls.length - 1;
-		const lastTxt = imgTxt.length -1;
+		const lastTxt = imgTxt.length - 1;
 		const { currentImageIndex } = this.state;
 		const { currentTxtIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === 0;
@@ -47,7 +47,7 @@ class Carousel extends React.Component {
 
 	nextSlide() {
 		const lastIndex = imgUrls.length - 1;
-		const lastTxt = imgTxt.length -1;
+		const lastTxt = imgTxt.length - 1;
 		const { currentImageIndex } = this.state;
 		const { currentTxtIndex } = this.state;
 		const shouldResetIndex = currentImageIndex === lastIndex;
@@ -61,8 +61,8 @@ class Carousel extends React.Component {
 		});
 	}
 
-	
-	
+
+
 
 	render() {
 		return (
@@ -71,9 +71,6 @@ class Carousel extends React.Component {
 
 				<Arrow direction="left" clickFunction={this.previousSlide} glyph="&#9664;" />
 				<ImageSlide url={imgUrls[this.state.currentImageIndex]} />
-				
-
-
 				<Arrow direction="right" clickFunction={this.nextSlide} glyph="&#9654;" />
 
 			</div>
@@ -96,9 +93,6 @@ const ImageSlide = ({ url }) => {
 		backgroundSize: 'cover',
 		backgroundPosition: 'center'
 	};
-
-	
-
 	return (
 		<Fade up>
 			<div className="image-slide" style={styles}>

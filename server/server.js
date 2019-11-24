@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
-	console.log('loading dev environments');
-	require('dotenv').config();
+  console.log('loading dev environments');
+  require('dotenv').config();
 }
 require('dotenv').config();
 
