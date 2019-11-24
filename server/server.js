@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== 'production') {
 require('dotenv').config();
 
 const express = require("express");
-const morgan = require('morgan');
 const mongoose = require("mongoose");
 const http = require('http');
 const socket = require('socket.io');
@@ -13,7 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Configure middleware
-app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -36,9 +34,9 @@ io.on('connection', (socket) => {
 });
 
 // Serve up static assets (usually on heroku)
-/* if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-} */
+}
 
 // Start the server
 server.listen(PORT, function () {
