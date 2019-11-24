@@ -1,6 +1,6 @@
 # Gamblr
 
-Trash talk gets old. It's time to put your money where your mouth is. Unless of course you are a loud-mouth liar. Are you a liar?
+Trash talk gets old. It's time to put your money where your mouth is. Unless of course you are a loud-mouth liar. Are you a loud-mouth liar?
 
 ## Getting Started
 
