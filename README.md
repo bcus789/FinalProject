@@ -20,12 +20,13 @@ Heroku
 
 ## Built With
 
-- VS Code
-- MongoDB
-- Json Web Tokens
-- Express.js
-- React Strap
-- Figma
+- VS Code : Build
+- MongoDB : Database
+- Json Web Tokens : Authentication
+- Twitch API : Stream
+- Socket.IO : Chat
+- React Strap : Component Framework
+- Figma : Prototyping
 
 ## Authors
 - **Ryan Aldrin** - https://github.com/akaryrye
@@ -38,4 +39,4 @@ Heroku
 
 ## Acknowledgments
 
-We don't condone underage gambling or usury
+We don't condone underage gambling
