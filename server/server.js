@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Connect to the Mongo DB
-mongoose.connect(/* process.env.MONGODB_URI ||  */'mongodb://localhost/testdb');
+// Connect to the Mongo DB (for local, swap to 'mongodb://localhost/testdb')
+mongoose.connect(process.env.MONGODB_URI);
 
 // Routes
 app.use('/api/user/', require("./routes/user"));
