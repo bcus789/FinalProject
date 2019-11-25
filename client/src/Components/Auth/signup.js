@@ -35,6 +35,7 @@ class Signup extends Component {
         .then(response => {
           console.log(response)
           this.props.updateUser(
+            response.data.user.userId,
             response.data.user.username,
             response.data.user.email,
             response.data.user.firstName,

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const betModel = new Schema(
   {
+    userId: String,
     amount: Number,
     event: String,
     eventDate: { type: Date },

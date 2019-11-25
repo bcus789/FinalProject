@@ -6,9 +6,10 @@ router.route('/submit')
   .post((req, res) => {
     console.log(req.body);
     const newBet = new Bet({
+      userId: req.body.userId,
       amount: req.body.amount,
-      event: 'event',
-      selection: 'selection'
+      event: req.body.event,
+      betFor: req.body.betFor
     })
     newBet.save((err, bet) => {
       if (err) return console.log(err);

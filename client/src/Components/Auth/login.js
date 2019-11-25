@@ -29,6 +29,7 @@ class Login extends Component {
         console.log(response)
         if (response.status === 200) {
           this.props.updateUser(
+              response.data.user.userId,
               response.data.user.username,
               response.data.user.email,
               response.data.user.firstName,
@@ -46,7 +47,7 @@ class Login extends Component {
   }
 
   render() {
-    if (this.props.loggedIn) return <Redirect to='/' />
+    if (this.props.loggedIn) return (<Redirect to='/' />)
     return (
       <div>
         <h2 className="login-txt">Login</h2>
