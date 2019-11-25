@@ -5,7 +5,7 @@ class Info extends Component {
 
   logout = () => {
     console.log('logging out')
-    this.props.updateUser(null, null, null, null, null, false)
+    this.props.updateUser(null, null, null, null, null, null, false)
     localStorage.removeItem('token');
   }
 

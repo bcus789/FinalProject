@@ -12,6 +12,7 @@ import "./App.css";
 class App extends Component {
 
   state = {
+    userId: null,
     username: null,
     email: null,
     firstName: null,
@@ -24,8 +25,8 @@ class App extends Component {
     if (localStorage.getItem('token')) this.getUser();
   }
 
-  updateUser = (username, email, firstName, lastName, wallet, loggedIn) => {
-    this.setState({ username, email, firstName, lastName, wallet, loggedIn });
+  updateUser = (userId, username, email, firstName, lastName, wallet, loggedIn) => {
+    this.setState({ userId, username, email, firstName, lastName, wallet, loggedIn });
   }
 
   getUser = () => {
@@ -34,6 +35,7 @@ class App extends Component {
         console.log(response)
         if (response) {
           this.updateUser(
+            response.data._id,
             response.data.username,
             response.data.email,
             response.data.firstName,
@@ -42,7 +44,7 @@ class App extends Component {
             true)
         } else {
           console.log('No user or Invalid token');
-          this.updateUser(null, null, null, null, null, false)
+          //this.updateUser(null, null, null, null, null, null, false)
         };
       });
   };
@@ -60,7 +62,8 @@ class App extends Component {
             <Route exact path='/wallet' component={Wallet} />
             <Route exact path='/events' component={Events} />
           </Switch>
-          <AnteUp username={this.state.username}
+          <AnteUp userId={this.state.userId}
+                  username={this.state.username}
                   wallet={this.state.wallet}
                   loggedIn={this.state.loggedIn} />
         </div>

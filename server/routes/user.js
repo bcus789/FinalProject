@@ -37,7 +37,7 @@ router.route("/register")
                     res.json({
                       token,
                       user: {
-                        id: user._id,
+                        userId: user._id,
                         username: user.username,
                         email: user.email,
                         firstName: user.firstName,
@@ -81,6 +81,7 @@ router.route('/auth')
               res.json({
                 token,
                 user: {
+                  userId: user._id,
                   username: user.username,
                   email: user.email,
                   firstName: user.firstName,
