@@ -1,6 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-router-dom'
+
 import './TopNav.css';
 
 function Navbar() {
@@ -18,6 +19,8 @@ function Navbar() {
                                 <Link to='/wallet' >Wallet</Link>
 
                                 <li><a href="/">SHOP</a></li>
+
+
                             </ul>
                         </Fade>
                     </div>
