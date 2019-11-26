@@ -8,7 +8,7 @@ const betModel = new Schema(
     amount: Number,
     event: String,
     eventDate: { type: Date },
-    selection: String
+    betFor: String
   },
   {
     timestamps: true
