@@ -50,7 +50,7 @@
   .modal-main {
     position: absolute;
     font-family: 'Muli', sans-serif;
-    background: white;
+    background: rgb(209, 4, 4);
     width: 40%;
     text-align: center;
     height: auto;

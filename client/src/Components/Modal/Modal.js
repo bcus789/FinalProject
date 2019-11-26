@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../Auth/login.js";
+import Auth from "../Auth";
 import Fade from 'react-reveal/Fade';
 import "./Modal.css";
 class LogModal extends React.Component {
@@ -16,10 +16,19 @@ class LogModal extends React.Component {
     render() {
       return (
         <main>
-          <Modal show={this.state.show} handleClose={this.hideModal} >
-            <Login />
+          <Modal  show={this.state.show}
+                  handleClose={this.hideModal} >
+            <Auth username={this.props.username}
+                  loggedIn={this.props.loggedIn}
+                  updateUser={this.props.updateUser}
+                  hideModal={this.hideModal} />
           </Modal>
-          <Fade right><button className="log-in" type='button' onClick={this.showModal}>LOG IN</button></Fade>
+          <Fade right>
+            <button className="log-in"
+                    type='button'
+                    onClick={this.showModal}>LOG IN
+            </button>
+          </Fade>
         </main>
       )
     }
