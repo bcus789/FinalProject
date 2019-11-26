@@ -6,7 +6,7 @@ import Wallet from './Pages/Wallet/Wallet'
 import Events from './Pages/Events/Events'
 import axios from 'axios';
 import LogModal from "./Components/Modal/Modal.js";
-import AnteUp from "./Components/AnteUp/Dropdown";
+// import AnteUp from "./Components/AnteUp/Dropdown";
 import "./App.css";
 
 class App extends Component {
@@ -58,19 +58,20 @@ class App extends Component {
       <Router>
         <div>
           <LogModal username={this.state.username}
-                    loggedIn={this.state.loggedIn}
-                    updateUser={this.updateUser} />
+            loggedIn={this.state.loggedIn}
+            updateUser={this.updateUser} />
           <Switch>
+           
             <Route exact path='/' component={Home} />
+            <Route exact path='/events' component={Events} />
             <Route exact path='/about' component={About} />
             <Route exact path='/wallet' component={Wallet} />
-            <Route exact path='/events' component={Events} />
+
           </Switch>
-          <AnteUp userId={this.state.userId}
-                  username={this.state.username}
-                  wallet={this.state.wallet}
-                  updateWallet={this.updateWallet}
-                  loggedIn={this.state.loggedIn} />
+          {/* <AnteUp userId={this.state.userId}
+                      username={this.state.username}
+                      wallet={this.state.wallet}
+                      loggedIn={this.state.loggedIn} /> */}
         </div>
       </Router>
 

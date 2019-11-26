@@ -10,13 +10,14 @@ function Navbar() {
             <header className="toolbar">
 
                 <nav className="main-nav">
-                    <a className="logo-txt" ><Link to='/'>GAMBLR</Link></a>
+                    <a href="/" className="logo-txt" ><Link to="/">GAMBLR</Link></a>
                     <div className="nav-items">
                         <Fade right>
                             <ul>
-                                <Link to='/about' >About</Link>
+
+                               <li><Link to='/about' >ABOUT</Link></li> 
                                 <br />
-                                <Link to='/wallet' >Wallet</Link>
+                                <li><Link to='/wallet' >WALLET</Link></li>
 
                                 <li><a href="/">SHOP</a></li>
 

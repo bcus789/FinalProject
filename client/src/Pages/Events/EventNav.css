@@ -1,0 +1,227 @@
+.nav-line {
+    height: 450px;
+    width: 1px;
+    position: fixed;
+    background-color: rgba(196, 196, 196, 0.317);
+    display: flex;
+    margin-left: 150px;
+    margin-top: 250px;
+    z-index: 4;
+  }
+
+  
+  
+  .home-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: -16px;
+    margin-top: -14px;
+    background-color: #7a7a7a50;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .home-inner {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 2px;
+    background-color: #826ABA;
+    border-radius: 30px;
+  }
+  
+  .events-indicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 30px;
+    margin-left: -15px;
+    margin-top: 140px;
+    transition: all 0.3s ease-in-out;
+    border: 3px solid #999999;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* .events-indicator:hover {
+  
+    margin-left: -17px;
+    margin-top: 139px;
+    border: 3px solid #999999;
+    width: 34px;
+    height: 34px;
+  } */
+  
+  
+  
+  .events-indicator p {
+   
+   color: white;
+   
+  }
+  
+  
+  .events-inner {
+    transition: all 0.2s ease-in-out;
+    width: 24px;
+    height: 24px;
+    border-radius: 30px;
+    margin-top: 1px;
+    margin-left: 1px;
+    background-color: white;
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+    z-index: 3;
+   
+  }
+  
+  
+  
+  
+  
+  .payments-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: -15px;
+    margin-top: 280px;
+    background-color: #7a7a7a50;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payments-indicator:hover {
+    
+    margin-left: -17px;
+    margin-top: 278px;
+    border: 3px solid #999999;
+    width: 34px;
+    height: 34px;
+  }
+  
+  .payments-indicator:hover .payments-inner {
+    
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+    background-color: rgb(255, 255, 255);
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .payments-indicator:hover p {
+    transition: all 0.2s ease-in-out;
+   color: white;
+   
+  }
+  
+  .payments-inner {
+    transition: all 0.2s ease-in-out;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: #826ABA;
+    z-index: 3;
+   position: absolute;
+  }
+  
+  .leaderboard-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: -15px;
+    margin-top: 425px;
+    background-color: #7a7a7a50;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+    
+  }
+  
+  .leaderboard-indicator:hover {
+    
+    margin-left: -18px;
+    margin-top: 424px;
+    border: 3px solid #999999;
+    width: 34px;
+    height: 34px;
+  }
+  
+  .leaderboard-indicator:hover .leaderboard-inner {
+  
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.877);
+    background-color: rgb(255, 255, 255);
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .leaderboard-indicator:hover p {
+    transition: all 0.2s ease-in-out;
+   color: white;
+   
+  }
+  
+  .leaderboard-inner {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: #826ABA;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+   position: absolute;
+  }
+  
+  .home-txt {
+    font-family: 'Muli', sans-serif;
+    font-weight: bolder;
+    font-size: 13px;
+    color: white;
+    margin-left: 42px;
+    margin-top: 3px;
+  }
+  
+  .events-txt {
+    font-family: 'Muli', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.294);
+    margin-left: 42px;
+    margin-top: 3px;
+  }
+  
+  .payments-txt {
+    font-family: 'Muli', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.294);
+    margin-left: 42px;
+    margin-top: 3px;
+  }
+  
+  .leaderboard-txt {
+    font-family: 'Muli', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.294);
+    margin-left: 42px;
+    margin-top: 3px;
+  }
+  
+  @media (max-width: 1500px) {
+    .nav-line {
+      visibility: hidden;
+    }
+  }
+  

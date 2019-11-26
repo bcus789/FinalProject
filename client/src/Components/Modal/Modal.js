@@ -1,16 +1,10 @@
-
-import React, {Component} from "react";
-import Auth from "../Auth";
+import React from "react";
+import Login from "../Auth/login.js";
 import Fade from 'react-reveal/Fade';
 import "./Modal.css";
-
-class LogModal extends Component {
-    
-    state = { 
-      show: false,
-      btnMsg: 'LOG-IN'
-    }
-
+class LogModal extends React.Component {
+    state = { show: false }
+  
     showModal = () => {
       this.setState({ show: true });
     }
@@ -20,24 +14,12 @@ class LogModal extends Component {
     }
       
     render() {
-      
-      if (this.state.loggedIn) {
-        this.setState({btnMsg: 'LOG OUT'});
-      }
-      
       return (
         <main>
           <Modal show={this.state.show} handleClose={this.hideModal} >
-            <Auth username={this.props.username}
-                  loggedIn={this.props.loggedIn}
-                  updateUser={this.props.updateUser}
-                  hideModal={this.hideModal} />
+            <Login />
           </Modal>
-          <Fade right>
-            <button className="log-in" type='button' onClick={this.showModal}>
-              {this.state.btnMsg}
-            </button>
-          </Fade>
+          <Fade right><button className="log-in" type='button' onClick={this.showModal}>LOG IN</button></Fade>
         </main>
       )
     }
@@ -48,6 +30,7 @@ class LogModal extends Component {
   
     return (
       <div className={showHideClassName}>
+        <Fade up>
         <section className='modal-main'>
           {children}
           <button className="close-bttn"
@@ -56,6 +39,7 @@ class LogModal extends Component {
             CLOSE
           </button>
         </section>
+        </Fade>
       </div>
     );
   };
