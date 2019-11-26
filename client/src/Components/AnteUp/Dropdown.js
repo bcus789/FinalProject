@@ -19,11 +19,12 @@ export default class Dropdown extends Component {
     betFor: null,
     payout: 0,
     wager: 0,
-    isOpen: false
+    isOpen: false,
+    bets: []
   };
 
   componentWillReceiveProps(nextProps) {
-    // Any time props.email changes, update state.
+    // Update state with user info on login, update state.
     if (nextProps.loggedIn !== this.props.loggedIn) {
       this.setState({
         wallet: nextProps.wallet
@@ -57,9 +58,28 @@ export default class Dropdown extends Component {
         axios.post('/api/bet/submit', bet)
           .then( response => {
             console.log(response);
+            alert('Bet successfully posted')
+            this.getUserBets(bet.userId);
+            this.updateNewWallet(bet.userId, bet.amount)
           })
-      } else return alert('Bet must be within range of available funds')
+      } else return alert('Amount must be within range of available funds')
     } else return alert('You must be logged in to place a bet')
+  }
+
+  getUserBets = userId => {
+    axios.get(`/api/bet/${userId}`)
+      .then( response => {
+        console.log(response)
+        this.setState({bets: response.data})
+      })
+  }
+
+  updateNewWallet = (userId, amount) => {
+    axios.get(`/api/user/update/${userId}/${amount}`)
+      .then(response => {
+        console.log(response)
+        this.props.updateWallet(response.data);
+      });
   }
 
   render() {
@@ -89,7 +109,7 @@ export default class Dropdown extends Component {
                             id="wager"
                             type="number"
                             min={1}
-                            max={1500}
+                            max={this.props.wallet}
                             placeholder="Bet Something"
                             onChange={this.handleChange} />
                     <Button onClick={this.selectTeam}
@@ -108,6 +128,11 @@ export default class Dropdown extends Component {
                     </Button>
                   </div>
                 </Form>
+                <ul>
+                  {this.state.bets.map(bet => (
+                    <li>EVENT: {bet.event}, BETTING FOR: {bet.betFor} AMOUNT: {bet.amount}</li>
+                  ))}
+                </ul>
               </section>
               ) : (
                 <h3>Please Sign in to Begin</h3>

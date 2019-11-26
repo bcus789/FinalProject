@@ -29,6 +29,10 @@ class App extends Component {
     this.setState({ userId, username, email, firstName, lastName, wallet, loggedIn });
   }
 
+  updateWallet = wallet => {
+    this.setState(wallet);
+  }
+
   getUser = () => {
     axios.get('/api/user/info', { headers: { "x-auth-token": localStorage.getItem('token') } })
       .then(response => {
@@ -65,9 +69,9 @@ class App extends Component {
 
           </Switch>
           {/* <AnteUp userId={this.state.userId}
-                  username={this.state.username}
-                  wallet={this.state.wallet}
-                  loggedIn={this.state.loggedIn} /> */}
+                      username={this.state.username}
+                      wallet={this.state.wallet}
+                      loggedIn={this.state.loggedIn} /> */}
         </div>
       </Router>
 

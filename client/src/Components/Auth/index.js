@@ -1,7 +1,6 @@
 // import libraries
 import React, {Component} from 'react';
 import { Route } from "react-router-dom";
-// import axios from 'axios';
 
 // import components
 import Login from './login';

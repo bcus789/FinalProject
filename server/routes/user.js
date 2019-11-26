@@ -3,7 +3,7 @@ const User = require('../db/models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const decode = require('../auth/decode')
-//const path = require("path");
+const path = require("path");
 
 
 // POST api/user/register (register new user) 
@@ -106,6 +106,17 @@ router.route('/info')
         res.json(user)
       }) 
   });
+
+// GET api/user/update (Update user wallet)
+router.route('/update/:userId/:amount')
+  .get( (req, res) => {
+    User.findById(req.params.userId)
+      .then( result => {
+        result.wallet = result.wallet - req.params.amount;
+        result.save();
+        res.json({wallet:result.wallet})
+    })
+  })
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {

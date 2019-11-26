@@ -20,6 +20,15 @@ router.route('/submit')
     })
   })
 
+  // retrieve all bets placed by user
+  router.route('/:id')
+    .get((req, res) => {
+      Bet.find({userId: req.params.id}, (err, result) => {
+        if (err) throw err;
+        res.json(result)
+      })
+    })
+
   //router.route('/')
 
 module.exports = router;
