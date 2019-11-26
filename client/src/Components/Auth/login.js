@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Redirect } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 import axios from "axios";
 import "../Modal/Modal.css";
 
@@ -49,12 +50,13 @@ class Login extends Component {
   render() {
     if (this.props.loggedIn) return (<Redirect to='/' />)
     return (
+      <Fade up>
       <div>
         <h2 className="login-txt">Login</h2>
         <form>
           <div>
             
-            <label htmlFor="email">Email</label>
+            
             <input
               type="email"
               id="email"
@@ -82,6 +84,7 @@ class Login extends Component {
 
         </form>
       </div>
+      </Fade>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Stream.css";
+import Fade from 'react-reveal/Fade';
 
 function Stream() {
   const divStyle = {
@@ -7,7 +8,9 @@ function Stream() {
     width: 980
   };
   return (
+    <Fade right>
     <iframe
+      title="Stream"
       id="Stream"
       style={divStyle}
       src="https://player.twitch.tv/?video=503281087&muted=true"
@@ -16,6 +19,7 @@ function Stream() {
       allowfullscreen="true"
       time="1h5m0s"
     ></iframe>
+    </Fade>
   );
 }
 

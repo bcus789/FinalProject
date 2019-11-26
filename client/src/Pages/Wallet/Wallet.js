@@ -1,7 +1,7 @@
 import React from "react";
 import SideNav from "../../Components/SideNav/SideNav.js"
 import Navbar from "../../Components/TopNav/TopNav.js";
-import '../../App.css'
+import './Wallet.css';
 
 function Wallet() {
     return (
