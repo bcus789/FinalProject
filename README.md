@@ -5,6 +5,7 @@ Trash talk gets old. It's time to put your money where your mouth is. Unless of 
 ## Getting Started
 
 At this point in time, just visit the website.
+https://evening-plains-03671.herokuapp.com/
 
 ### Prerequisites
 
