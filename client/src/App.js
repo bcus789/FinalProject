@@ -75,17 +75,29 @@ class App extends Component {
     return (
       <Router>
         <div>
+          
           <LogModal
             username={this.state.username}
             loggedIn={this.state.loggedIn}
             updateUser={this.updateUser}
           />
+          
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/about" component={About} />
             <Route exact path="/wallet" component={Wallet} />
           </Switch>
+          <AnteUp 
+            userId={this.state.userId}
+            username={this.state.userName}
+            email={this.state.email}
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            wallet={this.state.wallet}
+            loggedIn={this.state.loggedIn}
+            updateWallet={this.updateWallet}
+          />
         </div>
       </Router>
     );
