@@ -1,0 +1,19 @@
+#jumbo {
+  position: absolute;
+  margin: 30px !important;
+  margin-top: 15% !important;
+  margin-left: 20% !important;
+  width: 60%;
+  height: 30% !important;
+  font-family: "Muli", sans-serif !important;
+}
+h1 {
+  letter-spacing: 3px;
+}
+p {
+  font-family: "Muli", sans-serif !important;
+  font-size: 30px;
+}
+a {
+  color: blueviolet;
+}
