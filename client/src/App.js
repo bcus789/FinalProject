@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from './Pages/Home/Home'
-import About from './Pages/About/About'
-import Wallet from './Pages/Wallet/Wallet'
-import Events from './Pages/Events/Events'
-import axios from 'axios';
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Wallet from "./Pages/Wallet/Wallet";
+import Events from "./Pages/Events/Events";
+import axios from "axios";
 import LogModal from "./Components/Modal/Modal.js";
+<<<<<<< HEAD
 import AnteUp from "./Components/AnteUp/Dropdown";
+=======
+>>>>>>> 6d9a3c4d440db4c2763d170d7bcc68576a4fa549
 import "./App.css";
 
 class App extends Component {
-
   state = {
     userId: null,
     username: null,
@@ -22,21 +24,40 @@ class App extends Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem('token')) this.getUser();
+    if (localStorage.getItem("token")) this.getUser();
   }
 
-  updateUser = (userId, username, email, firstName, lastName, wallet, loggedIn) => {
-    this.setState({ userId, username, email, firstName, lastName, wallet, loggedIn });
-  }
+  updateUser = (
+    userId,
+    username,
+    email,
+    firstName,
+    lastName,
+    wallet,
+    loggedIn
+  ) => {
+    this.setState({
+      userId,
+      username,
+      email,
+      firstName,
+      lastName,
+      wallet,
+      loggedIn
+    });
+  };
 
   updateWallet = wallet => {
     this.setState(wallet);
-  }
+  };
 
   getUser = () => {
-    axios.get('/api/user/info', { headers: { "x-auth-token": localStorage.getItem('token') } })
+    axios
+      .get("/api/user/info", {
+        headers: { "x-auth-token": localStorage.getItem("token") }
+      })
       .then(response => {
-        console.log(response)
+        console.log(response);
         if (response) {
           this.updateUser(
             response.data._id,
@@ -45,10 +66,11 @@ class App extends Component {
             response.data.firstName,
             response.data.lastName,
             response.data.wallet,
-            true)
+            true
+          );
         } else {
-          console.log('No user or Invalid token');
-        };
+          console.log("No user or Invalid token");
+        }
       });
   };
 
@@ -56,24 +78,26 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <LogModal username={this.state.username}
+          <LogModal
+            username={this.state.username}
             loggedIn={this.state.loggedIn}
-            updateUser={this.updateUser} />
+            updateUser={this.updateUser}
+          />
           <Switch>
-           
-            <Route exact path='/' component={Home} />
-            <Route exact path='/events' component={Events} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/wallet' component={Wallet} />
-
+            <Route exact path="/" component={Home} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/wallet" component={Wallet} />
           </Switch>
+<<<<<<< HEAD
           <AnteUp userId={this.state.userId}
                       username={this.state.username}
                       wallet={this.state.wallet}
                       loggedIn={this.state.loggedIn} />
+=======
+>>>>>>> 6d9a3c4d440db4c2763d170d7bcc68576a4fa549
         </div>
       </Router>
-
     );
   }
 }
