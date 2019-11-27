@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from "axios";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Wallet from "./Pages/Wallet/Wallet";
 import Events from "./Pages/Events/Events";
-import axios from "axios";
 import LogModal from "./Components/Modal/Modal.js";
-<<<<<<< HEAD
 import AnteUp from "./Components/AnteUp/Dropdown";
-=======
->>>>>>> 6d9a3c4d440db4c2763d170d7bcc68576a4fa549
 import "./App.css";
 
 class App extends Component {
@@ -89,13 +86,6 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/wallet" component={Wallet} />
           </Switch>
-<<<<<<< HEAD
-          <AnteUp userId={this.state.userId}
-                      username={this.state.username}
-                      wallet={this.state.wallet}
-                      loggedIn={this.state.loggedIn} />
-=======
->>>>>>> 6d9a3c4d440db4c2763d170d7bcc68576a4fa549
         </div>
       </Router>
     );
