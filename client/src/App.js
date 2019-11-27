@@ -48,7 +48,6 @@ class App extends Component {
             true)
         } else {
           console.log('No user or Invalid token');
-          //this.updateUser(null, null, null, null, null, null, false)
         };
       });
   };

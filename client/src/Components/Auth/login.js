@@ -54,9 +54,8 @@ class Login extends Component {
       <div>
         <h2 className="login-txt">Login</h2>
         <form>
+        
           <div>
-            
-            
             <input
               type="email"
               id="email"
@@ -67,7 +66,6 @@ class Login extends Component {
           </div>
 
           <div>
-          
             <input className="password-input"
                 placeholder="password"
                 type="password"
