@@ -1,7 +1,7 @@
 #anteUp {
   display: block;
   position: relative;
-  margin-top: 5%;
+  top: 80vh;
   margin-left: auto;
   margin-right: auto;
   width: 99%;
@@ -54,10 +54,10 @@ p {
   height: 50px;
   border-radius: 4px;
   margin-bottom: 40px !important;
-  margin-top: -40px;
+  margin-top: 85px;
 }
 #cardBody {
-  adding-bottom: 100px !important;
+  padding-bottom: 100px !important;
 }
 #betInput {
   display: inline-flex;
