@@ -93,7 +93,7 @@ export default class Dropdown extends Component {
         </Button>
         <Collapse isOpen={this.state.isOpen}>
           <Card>
-            <CardBody>
+            <CardBody id="cardBody">
               {this.props.loggedIn ? (
               <section>
                 <h3>EVENT: {this.state.event}</h3>
